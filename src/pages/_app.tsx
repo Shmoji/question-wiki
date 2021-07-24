@@ -2,6 +2,7 @@ import 'tailwindcss/tailwind.css'
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { Fragment, ReactNode } from 'react'
+import ModalRoot from 'components/modals/ModalRoot'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const Layout =
@@ -14,9 +15,12 @@ function MyApp({ Component, pageProps }: AppProps) {
     ).layoutProps?.Layout || Fragment
 
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+      <ModalRoot />
+    </>
   )
 }
 export default MyApp
